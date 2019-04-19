@@ -1,0 +1,47 @@
+Validation Suite Results for package "com.unity.memoryprofiler"
+ - Path: D:\Dev\Unity\Projects\TopDownStuff\Library\PackageCache\com.unity.memoryprofiler@0.1.0-preview.6
+ - Version: 0.1.0-preview.6
+ - Test Time: 19/04/2019 12:07:16 p. m.
+
+PACKAGE DEPENDENCIES:
+--------------------
+    - com.unity.editorcoroutines@0.0.2-preview.1
+
+VALIDATION RESULTS:
+-------------------
+
+Failed - "Package Update Validation"
+Error: Version 0.1.0-preview.6 of this package already exists in production.
+
+Succeeded - "Assembly Definition Validation"
+
+Succeeded - "ChangeLog Validation"
+
+Succeeded - "Dependency Validation"
+
+Succeeded - "Documentation Validation"
+
+Succeeded - "Manifest Validation"
+New dependency: "com.unity.editorcoroutines": "0.0.2-preview.1"
+
+Succeeded - "Meta Files Validation"
+
+Succeeded - "Online Documentation Validation"
+
+Succeeded - "Required File Type Validation"
+
+Succeeded - "Restricted File Type Validation"
+
+Succeeded - "Tests Validation"
+
+NotRun - "Package Diff Evaluation"
+No previous package version. Skipping diff evaluation.
+
+NotRun - "Samples Validation"
+No samples found. Skipping Samples Validation.
+
+NotImplementedYet - "Folder Structure Validation"
+
+NotImplementedYet - "License Validation"
+
+NotImplementedYet - "Signature Validation"
