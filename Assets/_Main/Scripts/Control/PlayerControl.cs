@@ -1,26 +1,39 @@
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.Input;
 
 public class PlayerControl : MonoBehaviour {
 
-  public InputMaster controls;
+    [SerializeField] private PlayerStats playerStats;
 
-  private void Awake () {
-    controls.Player.Shoot.performed += ctx => Shoot ();
-  }
+    private new Transform transform;
+    private new Rigidbody rigidbody;
 
-  void Move () {
-    print ("Player wants to move!");
-  }
+    private Vector3 moveDirection = Vector3.zero;
 
-  void Shoot () {
-    print ("We shot the sherif!");
-  }
+    private void Start () {
+        transform = GetComponent<Transform>();
+        rigidbody = GetComponent<Rigidbody>();
+    }
 
-  private void OnEnable () {
-    controls.Enable ();
-  }
-  private void OnDisable () {
-    controls.Disable ();
-  }
+    private void FixedUpdate () {
+        Move();
+    }
+
+    private void Update () {
+    }
+
+    void Move()
+    {
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical");
+
+        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+
+        rigidbody.AddForce(movement * playerStats.walkingSpeed);
+    }
+
+    void Shoot () {
+        print ("We shot the sherif!");
+    }
 }

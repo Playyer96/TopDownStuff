@@ -13,4 +13,4 @@ ScriptedImporter:
   wrapperClassName: 
   wrapperCodeNamespace: 
   generateActionEvents: 0
-  generateInterfaces: 0
+  generateInterfaces: 1
