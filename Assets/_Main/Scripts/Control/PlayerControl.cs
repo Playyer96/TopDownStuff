@@ -2,38 +2,42 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(CharacterController))]
 public class PlayerControl : MonoBehaviour {
 
     [SerializeField] private PlayerStats playerStats;
 
-    private new Transform transform;
-    private new Rigidbody rigidbody;
+    private float InputX, InputZ;
+    private Camera cam;
+    private CharacterController characterController;
 
-    private Vector3 moveDirection = Vector3.zero;
+    private Vector3 desiredMoveDIrection;
 
-    private void Start () {
-        transform = GetComponent<Transform>();
-        rigidbody = GetComponent<Rigidbody>();
-    }
-
-    private void FixedUpdate () {
-        Move();
-    }
-
-    private void Update () {
-    }
-
-    void Move()
+    private void Start()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-
-        rigidbody.AddForce(movement * playerStats.walkingSpeed);
+        characterController = GetComponent<CharacterController>();
+        cam = Camera.main;
     }
 
-    void Shoot () {
-        print ("We shot the sherif!");
+    private void Update()
+    {
+        
+    }
+
+    void MovementManager()
+    {
+        InputX = Input.GetAxis("Horizontal");
+        InputZ = Input.GetAxis("Vertical");
+
+        Vector3 forward = cam.transform.forward;
+        Vector3 right = cam.transform.right;
+
+        forward.y = 0;
+        right.y = 0;
+
+        forward.Normalize();
+        right.Normalize();
+
+        desiredMoveDIrection = forward * InputZ + right * InputX;
     }
 }
