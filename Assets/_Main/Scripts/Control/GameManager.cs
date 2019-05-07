@@ -13,4 +13,14 @@ public class GameManager : MonoBehaviour {
 
         DontDestroyOnLoad (gameObject);
     }
+
+    private void Start()
+    {
+        
+    }
+
+    private void Update()
+    {
+        
+    }
 }
