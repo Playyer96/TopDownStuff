@@ -10,6 +10,7 @@ public class PlayerStats : ScriptableObject {
     public float sprintSpeed = 15f;
     public float jumpForce = 10f;
     public float gravity;
+    public float rotationSpeed = 0.3f;
 
     [Header ("Other")][Space (10f)]
     public float damage = 10f;

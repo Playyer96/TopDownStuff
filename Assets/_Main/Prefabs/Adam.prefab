@@ -5713,10 +5713,10 @@ Animator:
   m_GameObject: {fileID: 1446791307119921028}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: f12f2d44b2688054986e54861cc211dc, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 521a58f6ed9828e408e63325f9aad56b, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -5767,6 +5767,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 11400000, guid: 5efa5c440d42ab14ea23a08178723ff4, type: 2}
+  allowRotation: 0.1
+  gravity: 0
+  gravityMultiplier: 0.3
 --- !u!1 &1446791307119921038
 GameObject:
   m_ObjectHideFlags: 0
